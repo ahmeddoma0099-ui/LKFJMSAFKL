@@ -38,6 +38,9 @@ def init_driver(chat_id):
     data = get_user_data(chat_id)
     if data['driver'] is None:
         chrome_options = Options()
+        options.add_argument("--headless")
+options.add_argument("--no-sandbox")
+options.add_argument("--disable-dev-shm-usage")
         chrome_options.add_argument("--disable-notifications")
         chrome_options.add_argument("--start-maximized")
         chrome_options.add_argument("--disable-blink-features=AutomationControlled")
